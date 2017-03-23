@@ -1,0 +1,57 @@
+---
+title: "Data Science Capstone Project - Word Prediction"
+author: "Mohamed Ali"
+date: "March 18, 2017"
+output: ioslides_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Overview
+
+This presentation is a part of deliverable required for Data Science Capstone project.
+
+The objective of this project is to build a working predictive text model. The data used in the 
+model came from a **corpus** called HC Corpora (www.corpora.heliohost.org). A corpus is body of text, 
+usually containing a large number of sentences.
+
+This corpus was used to calculate different N-gram units that will be used later by prediction algorithm.
+
+
+## Prediction Engine Building
+
+The algorithm developed to predict the next word(s) in a user-entered text string was based on a 
+classic **N-gram** model. Using a subset of cleansed data from blogs, twitter, and news 
+Internet files, **Maximum Likelihood Estimation** (MLE) of unigrams, bigrams, and trigrams were computed.
+
+To improve accuracy, **Jelinek-Mercer smoothing** was used in the algorithm, combining 
+trigram, bigram, and unigram probabilities. Whenever interpolation failed, 
+**part-of-speech tagging** (POST) was employed to provide default predictions by part of 
+speech. 
+
+
+## Web Application
+
+A shiny web application was built based on above algorithm logic and flow.
+
+The application is developed to accept user input and instantly calculates next 4 words. Those words are selected based on best match possible.
+
+
+The application demo built by Shiny and can be found at the URL:
+https://mam-moneim.shinyapps.io/datasciencecapstone/
+
+Source code is at GitHub for the application and presentation at the URL:
+https://github.com/mmonim/Coursera-DataScience-Capstone-Project
+
+
+
+## Sample Layout of the application
+
+Herein below a screen shot of the application along its various sections. User can start typing his own phrase and system will instantly and continuosly run prediciton algorithm to come up with next 4 best-fit words.
+
+![Application screen shot](C:/Users/Mohamed/Documents/Coursera/Capstone Project/DataScienceCapstoneGitHub/Application-ScreenShot2.png) 
+
+
+
